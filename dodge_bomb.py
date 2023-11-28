@@ -26,6 +26,7 @@ def main():
     bg_img = pg.image.load("ex02/fig/pg_bg.jpg")
     kk_img = pg.image.load("ex02/fig/3.png")
     kk_img = pg.transform.rotozoom(kk_img, 0, 2.0)
+    kk_img_ch = pg.image.load("ex02/fig/6.png")
 
     kk_rct = kk_img.get_rect()
     kk_rct.center = 900,400
@@ -39,6 +40,8 @@ def main():
     bb_rct.centery = random.randint(0, HEIGHT)
     vx, vy = +5, +5
 
+
+
     clock = pg.time.Clock()
     tmr = 0
     while True:
@@ -47,6 +50,10 @@ def main():
                 return
             
         if kk_rct.colliderect(bb_rct):
+            kk_img = kk_img_ch
+            screen.fill((255,0,0))
+            screen.blit(kk_img,kk_rct)
+            pg.display.update()
             print("Game Over")
             return
             
