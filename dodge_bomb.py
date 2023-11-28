@@ -51,7 +51,7 @@ def main():
             
         if kk_rct.colliderect(bb_rct):
             kk_img = kk_img_ch
-            screen.fill((255,0,0))
+            screen.fill((255,0,0))      #背景を赤色に塗りつぶす
             screen.blit(kk_img,kk_rct)
             pg.display.update()
             print("Game Over")
